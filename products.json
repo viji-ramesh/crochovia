@@ -1,0 +1,52 @@
+{
+  "products": [
+    {
+      "name": "Daisy Trinket Dish",
+      "category": "Clay",
+      "price": 450,
+      "description": "Hand-shaped dish with a daisy imprint. Holds rings, keys or earrings.",
+      "photo": "",
+      "visible": true
+    },
+    {
+      "name": "Mini Succulent Planter",
+      "category": "Clay",
+      "price": 620,
+      "description": "Small planter for succulents, finished with a matte glaze.",
+      "photo": "",
+      "visible": true
+    },
+    {
+      "name": "Hand-Pressed Coaster Set",
+      "category": "Clay",
+      "price": 890,
+      "description": "Set of four coasters, pressed by hand and sealed for everyday use.",
+      "photo": "",
+      "visible": true
+    },
+    {
+      "name": "Bendy Flower Bouquet",
+      "category": "Pipe Cleaners",
+      "price": 350,
+      "description": "Pipe cleaner flowers that bend into any shape. Made to last.",
+      "photo": "",
+      "visible": true
+    },
+    {
+      "name": "Pipe Cleaner Puppy",
+      "category": "Pipe Cleaners",
+      "price": 280,
+      "description": "A small posable puppy that sits, stands and wiggles.",
+      "photo": "",
+      "visible": true
+    },
+    {
+      "name": "Wiggly Bug Friends",
+      "category": "Pipe Cleaners",
+      "price": 240,
+      "description": "A set of three bugs with bendy legs and antennae.",
+      "photo": "",
+      "visible": false
+    }
+  ]
+}

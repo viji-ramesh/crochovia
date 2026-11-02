@@ -1,0 +1,22 @@
+{
+  "videos": [
+    {
+      "title": "From lump of clay to finished dish",
+      "type": "Making of",
+      "link": "https://www.youtube.com/watch?v=REPLACE_WITH_VIDEO_ID",
+      "visible": false
+    },
+    {
+      "title": "Bending a pipe cleaner puppy",
+      "type": "Making of",
+      "link": "https://www.instagram.com/reel/REPLACE_WITH_REEL_ID/",
+      "visible": false
+    },
+    {
+      "title": "See it in action: coaster set",
+      "type": "Product",
+      "link": "https://www.youtube.com/watch?v=REPLACE_WITH_VIDEO_ID",
+      "visible": false
+    }
+  ]
+}

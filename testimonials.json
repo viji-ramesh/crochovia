@@ -1,0 +1,22 @@
+{
+  "testimonials": [
+    {
+      "quote": "The trinket dish is even prettier in person. It sits on my dresser and I smile at it every day.",
+      "name": "Priya S.",
+      "product": "Daisy Trinket Dish",
+      "visible": true
+    },
+    {
+      "quote": "My daughter cannot stop playing with the pipe cleaner puppy. Sturdy, cute and beautifully made.",
+      "name": "Anita R.",
+      "product": "Pipe Cleaner Puppy",
+      "visible": true
+    },
+    {
+      "quote": "Ordered a custom coaster set in my kitchen colours. Quick replies and a lovely finish.",
+      "name": "Meera K.",
+      "product": "Hand-Pressed Coaster Set",
+      "visible": true
+    }
+  ]
+}

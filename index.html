@@ -3,439 +3,226 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>CROCHOVIA | Handmade Clay & Pipe Cleaner Creations</title>
+<title>CROCHOVIA | Handmade Clay and Pipe Cleaner Creations</title>
 <meta name="description" content="CROCHOVIA: handmade clay products and pipe cleaner creations, made one piece at a time." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 <style>
   :root {
-    --lilac: #cba3f0;
-    --lilac-soft: #f1e2fc;
-    --lilac-deep: #8e78d0;
-    --plum: #2c1747;
-    --plum-deep: #3d1a5c;
-    --white: #ffffff;
-    --sun: #ffc83d;
-    --ink: #2c1747;
-    --radius: 999px;
-    --shadow: 6px 6px 0 var(--plum);
+    --lilac: #cba3f0; --lilac-soft: #f1e2fc; --lilac-deep: #8e78d0;
+    --plum: #2c1747; --plum-deep: #3d1a5c; --white: #ffffff; --sun: #ffc83d;
+    --radius: 999px; --shadow: 6px 6px 0 var(--plum);
   }
-
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; scroll-padding-top: 90px; }
   body {
-    font-family: "Poppins", system-ui, sans-serif;
-    color: var(--ink);
+    font-family: "Poppins", system-ui, sans-serif; color: var(--plum); line-height: 1.6;
     background-color: var(--lilac);
-    background-image:
-      linear-gradient(rgba(255,255,255,.35) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,.35) 1px, transparent 1px);
+    background-image: linear-gradient(rgba(255,255,255,.35) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.35) 1px, transparent 1px);
     background-size: 56px 56px;
-    line-height: 1.6;
-    padding-top: env(safe-area-inset-top, 0px);
   }
-  img { max-width: 100%; display: block; }
+  img, iframe { max-width: 100%; display: block; }
   a { color: inherit; }
-
   .wrap { width: min(1120px, 92%); margin: 0 auto; }
   .script { font-family: "Caveat", cursive; font-weight: 700; }
+  .hidden { display: none !important; }
 
-  /* ---------- Header ---------- */
-  header {
-    position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50;
-    background: var(--plum);
-    color: var(--lilac);
-  }
-  .nav {
-    display: flex; align-items: center; justify-content: space-between;
-    height: 72px;
-  }
-  .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-  .logo .flower { width: 34px; height: 34px; }
-  .logo span { font-family: "Caveat", cursive; font-size: 2rem; font-weight: 700; color: var(--lilac); letter-spacing: .5px; }
-  .nav ul { display: flex; gap: 28px; list-style: none; }
-  .nav ul a { text-decoration: none; font-weight: 500; font-size: .95rem; color: var(--lilac-soft); transition: color .2s; }
+  header { position: sticky; top: 0; z-index: 50; background: var(--plum); color: var(--lilac); }
+  .nav { display: flex; align-items: center; justify-content: space-between; height: 72px; gap: 16px; }
+  .logo { font-family: "Caveat", cursive; font-size: 2rem; font-weight: 700; color: var(--lilac); text-decoration: none; }
+  .nav ul { display: flex; gap: 26px; list-style: none; }
+  .nav ul a { text-decoration: none; font-size: .95rem; font-weight: 500; color: var(--lilac-soft); }
   .nav ul a:hover { color: var(--sun); }
-  .cart-btn {
-    background: var(--lilac); color: var(--plum); border: 0; border-radius: var(--radius);
-    padding: 9px 18px; font-weight: 700; font-family: inherit; cursor: pointer;
-    box-shadow: 3px 3px 0 var(--sun);
-  }
-  .cart-btn b { background: var(--plum); color: var(--sun); border-radius: 50%; padding: 1px 7px; margin-left: 6px; font-size: .8rem; }
   .menu-toggle { display: none; background: none; border: 0; color: var(--lilac); font-size: 1.6rem; cursor: pointer; }
 
-  /* ---------- Hero ---------- */
-  .hero { padding: 70px 0 90px; position: relative; overflow: hidden; }
+  .btn { display: inline-block; text-decoration: none; font-weight: 700; font-family: inherit; font-size: .95rem; padding: 13px 26px; border-radius: var(--radius); border: 2px solid var(--plum); cursor: pointer; transition: transform .15s; }
+  .btn:hover { transform: translate(-2px,-2px); }
+  .btn-primary { background: var(--plum); color: var(--lilac); box-shadow: var(--shadow); }
+  .btn-light { background: var(--white); color: var(--plum); box-shadow: 4px 4px 0 var(--plum); }
+  .btn-small { padding: 8px 14px; font-size: .8rem; box-shadow: 3px 3px 0 var(--sun); }
+  .btn-row { display: flex; gap: 14px; flex-wrap: wrap; }
+
+  .hero { padding: 70px 0 80px; }
   .hero-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 50px; align-items: center; }
-  .eyebrow {
-    display: inline-block; background: var(--white); border: 2px solid var(--plum);
-    border-radius: var(--radius); padding: 6px 16px; font-weight: 600; font-size: .85rem;
-    box-shadow: 3px 3px 0 var(--plum); margin-bottom: 22px;
-  }
-  .hero h1 {
-    font-family: "Poppins", sans-serif; font-weight: 800;
-    font-size: clamp(2.8rem, 7vw, 5rem); line-height: 1; letter-spacing: -1px;
-    color: var(--plum); margin-bottom: 18px;
-  }
+  .hero h1 { font-weight: 800; font-size: clamp(2.6rem, 6vw, 4.6rem); line-height: 1.02; letter-spacing: -1px; margin-bottom: 18px; }
   .hero h1 em { font-style: normal; color: var(--white); -webkit-text-stroke: 2px var(--plum); text-shadow: 4px 4px 0 var(--plum); }
   .hero p.lead { font-size: 1.1rem; max-width: 480px; margin-bottom: 30px; }
-  .btn-row { display: flex; gap: 14px; flex-wrap: wrap; }
-  .btn {
-    display: inline-block; text-decoration: none; font-weight: 700; font-family: inherit;
-    padding: 14px 28px; border-radius: var(--radius); border: 2px solid var(--plum);
-    cursor: pointer; transition: transform .15s, box-shadow .15s;
-  }
-  .btn:hover { transform: translate(-2px, -2px); }
-  .btn-primary { background: var(--plum); color: var(--lilac); box-shadow: var(--shadow); }
-  .btn-primary:hover { box-shadow: 8px 8px 0 var(--sun); }
-  .btn-ghost { background: var(--white); color: var(--plum); box-shadow: 4px 4px 0 var(--plum); }
+  .panel { background: var(--white); border: 3px solid var(--plum); box-shadow: 10px 10px 0 var(--plum-deep); }
+  .panel-bar { height: 34px; background: var(--plum); display: flex; align-items: center; gap: 7px; padding: 0 12px; }
+  .panel-bar i { width: 11px; height: 11px; border-radius: 50%; border: 1.5px solid var(--plum); display: block; }
+  .panel-bar i:nth-child(1) { background: #ff5a2b; } .panel-bar i:nth-child(2) { background: var(--sun); } .panel-bar i:nth-child(3) { background: var(--white); }
+  .checker { height: 300px; background-color: var(--white); background-image: linear-gradient(45deg, var(--lilac) 25%, transparent 25%, transparent 75%, var(--lilac) 75%), linear-gradient(45deg, var(--lilac) 25%, transparent 25%, transparent 75%, var(--lilac) 75%); background-size: 52px 52px; background-position: 0 0, 26px 26px; }
+  .monogram-box { height: 300px; background: var(--plum); display: flex; align-items: center; justify-content: center; }
+  .monogram { width: 170px; height: 170px; border-radius: 50%; background: var(--lilac-deep); border: 4px solid var(--white); display: flex; align-items: center; justify-content: center; font-family: "Caveat", cursive; font-size: 4.4rem; font-weight: 700; color: var(--white); box-shadow: 0 0 0 10px var(--plum); }
 
-  /* Hero collage: checkerboard window + daisy window */
-  .collage { position: relative; height: 480px; }
-  .window {
-    position: absolute; background: var(--white); border: 3px solid var(--plum);
-    box-shadow: 10px 10px 0 var(--plum-deep); overflow: hidden;
-  }
-  .window-bar {
-    height: 34px; background: var(--plum); display: flex; align-items: center; gap: 7px; padding: 0 12px;
-  }
-  .window-bar i { width: 11px; height: 11px; border-radius: 50%; border: 1.5px solid var(--plum); display: block; }
-  .window-bar i:nth-child(1) { background: #ff5a2b; }
-  .window-bar i:nth-child(2) { background: var(--sun); }
-  .window-bar i:nth-child(3) { background: var(--white); }
-  .win-check {
-    height: calc(100% - 34px);
-    background-color: var(--white);
-    background-image:
-      linear-gradient(45deg, var(--lilac) 25%, transparent 25%, transparent 75%, var(--lilac) 75%),
-      linear-gradient(45deg, var(--lilac) 25%, transparent 25%, transparent 75%, var(--lilac) 75%);
-    background-size: 52px 52px;
-    background-position: 0 0, 26px 26px;
-  }
-  .win-main { top: 20px; left: 0; width: 88%; height: 330px; }
-  .win-daisy {
-    bottom: 0; right: 0; width: 80%; height: 340px; background: var(--plum);
-    border-color: var(--plum);
-  }
-  .win-daisy .window-bar { background: var(--lilac); }
-  .win-daisy .window-bar i:nth-child(1) { background: #ff5a2b; }
-  .win-daisy .window-bar i:nth-child(2) { background: #5fc46a; }
-  .win-daisy .window-bar i:nth-child(3) { background: var(--white); }
-  .daisy-pattern {
-    height: calc(100% - 34px);
-    background-color: var(--plum);
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'><g fill='%23ffffff'><circle cx='20' cy='14' r='5'/><circle cx='12' cy='14' r='5'/><circle cx='28' cy='14' r='5'/><circle cx='20' cy='6' r='5'/><circle cx='20' cy='22' r='5'/></g><circle cx='20' cy='14' r='2' fill='%23ffc83d'/><g fill='%23ffffff'><circle cx='60' cy='54' r='5'/><circle cx='52' cy='54' r='5'/><circle cx='68' cy='54' r='5'/><circle cx='60' cy='46' r='5'/><circle cx='60' cy='62' r='5'/></g><circle cx='60' cy='54' r='2' fill='%23ffc83d'/></svg>");
-    background-size: 80px 80px;
-    display: flex; align-items: center; justify-content: center;
-  }
-  .monogram {
-    width: 210px; height: 210px; border-radius: 50%; background: var(--lilac-deep);
-    border: 4px solid var(--white); display: flex; align-items: center; justify-content: center;
-    font-family: "Caveat", cursive; font-size: 5rem; color: var(--white); font-weight: 700;
-    box-shadow: 0 0 0 10px var(--plum);
-  }
-  .launch-tag {
-    position: absolute; top: 40px; right: -10px; background: var(--lilac-soft); color: var(--plum);
-    border: 3px solid var(--plum); padding: 12px 22px; font-weight: 800; font-size: 1.05rem;
-    box-shadow: 6px 6px 0 var(--plum); transform: rotate(-3deg);
-  }
-  .sparkle { position: absolute; color: var(--sun); font-size: 2.2rem; text-shadow: 2px 2px 0 var(--plum); }
-
-  /* ---------- Sections ---------- */
   section { padding: 80px 0; }
-  .section-head { text-align: center; margin-bottom: 50px; }
-  .section-head .tag { font-family: "Caveat", cursive; font-size: 1.8rem; color: var(--plum-deep); }
-  .section-head h2 { font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 800; color: var(--plum); line-height: 1.15; }
+  .head { text-align: center; margin-bottom: 46px; }
+  .head .tag { font-family: "Caveat", cursive; font-size: 1.8rem; color: var(--plum-deep); }
+  .head h2 { font-size: clamp(2rem, 4vw, 2.7rem); font-weight: 800; line-height: 1.15; }
+  .head p { max-width: 560px; margin: 10px auto 0; }
 
-  /* Categories */
-  .cats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
-  .cat {
-    background: var(--white); border: 3px solid var(--plum); box-shadow: var(--shadow);
-    padding: 34px; text-decoration: none; transition: transform .2s, box-shadow .2s; position: relative;
-  }
-  .cat:hover { transform: translate(-3px,-3px); box-shadow: 9px 9px 0 var(--sun); }
-  .cat .icon {
-    width: 64px; height: 64px; border-radius: 50%; background: var(--lilac); border: 3px solid var(--plum);
-    display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin-bottom: 18px;
-  }
-  .cat h3 { font-size: 1.5rem; font-weight: 800; color: var(--plum); margin-bottom: 8px; }
+  .cats { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  .cat { background: var(--white); border: 3px solid var(--plum); box-shadow: var(--shadow); padding: 32px; text-decoration: none; transition: transform .2s; }
+  .cat:hover { transform: translate(-3px,-3px); }
+  .cat h3 { font-size: 1.45rem; font-weight: 800; margin-bottom: 8px; }
   .cat p { color: #5a4378; }
-  .cat .arrow { position: absolute; top: 34px; right: 34px; font-weight: 800; font-size: 1.4rem; color: var(--lilac-deep); }
 
-  /* Products */
-  .products { background: var(--plum); color: var(--lilac-soft); border-top: 3px solid var(--plum); border-bottom: 3px solid var(--plum); }
-  .products .section-head h2 { color: var(--lilac); }
-  .products .section-head .tag { color: var(--sun); }
+  .products { background: var(--plum); color: var(--lilac-soft); }
+  .products .head h2 { color: var(--lilac); }
+  .products .head .tag { color: var(--sun); }
   .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 26px; }
-  .card {
-    background: var(--lilac-soft); color: var(--plum); border: 3px solid var(--lilac);
-    border-radius: 20px; overflow: hidden; display: flex; flex-direction: column;
-  }
-  .card .thumb {
-    aspect-ratio: 1 / 1; display: flex; align-items: center; justify-content: center; font-size: 4.5rem;
-    border-bottom: 3px solid var(--plum);
-  }
-  .thumb.t1 { background: var(--lilac); }
-  .thumb.t2 { background: var(--white); background-image: linear-gradient(45deg, var(--lilac-soft) 25%, transparent 25%, transparent 75%, var(--lilac-soft) 75%); background-size: 30px 30px; }
-  .thumb.t3 { background: var(--sun); }
-  .thumb.t4 { background: var(--lilac-deep); }
-  .card .body { padding: 18px 20px 22px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
-  .card .body small { font-weight: 600; text-transform: uppercase; letter-spacing: 1px; font-size: .72rem; color: var(--lilac-deep); }
+  .card { background: var(--lilac-soft); color: var(--plum); border: 3px solid var(--lilac); border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; }
+  .card .thumb { aspect-ratio: 1 / 1; background: var(--lilac); display: flex; align-items: center; justify-content: center; font-size: 3rem; border-bottom: 3px solid var(--plum); }
+  .card .thumb img { width: 100%; height: 100%; object-fit: cover; }
+  .card .body { padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+  .card small { font-weight: 600; text-transform: uppercase; letter-spacing: 1px; font-size: .7rem; color: var(--lilac-deep); }
   .card h4 { font-size: 1.1rem; font-weight: 700; }
-  .card .price { font-weight: 800; font-size: 1.1rem; }
-  .add {
-    margin-top: auto; background: var(--plum); color: var(--lilac); border: 0; border-radius: var(--radius);
-    padding: 10px; font-weight: 700; font-family: inherit; cursor: pointer; box-shadow: 3px 3px 0 var(--sun);
-  }
-  .add:active { transform: translate(2px,2px); box-shadow: 1px 1px 0 var(--sun); }
-  .add.done { background: var(--sun); color: var(--plum); }
+  .card p { font-size: .9rem; color: #4a3366; }
+  .card .price { font-weight: 800; }
+  .card .actions { margin-top: auto; display: flex; gap: 8px; flex-wrap: wrap; padding-top: 10px; }
 
-  /* About */
-  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-  .about-card {
-    background: var(--white); border: 3px solid var(--plum); padding: 40px; box-shadow: 10px 10px 0 var(--lilac-deep);
-  }
-  .about-card h3 { font-family: "Caveat", cursive; font-size: 2.4rem; color: var(--plum-deep); margin-bottom: 10px; }
-  .about-card p + p { margin-top: 14px; }
-  .values { display: grid; gap: 18px; margin-top: 26px; }
-  .value { display: flex; gap: 16px; align-items: flex-start; }
-  .value .dot { flex: 0 0 auto; width: 44px; height: 44px; border-radius: 50%; background: var(--sun); border: 3px solid var(--plum); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
-  .value strong { display: block; color: var(--plum); }
+  .testi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 26px; }
+  .quote { background: var(--white); border: 3px solid var(--plum); box-shadow: 6px 6px 0 var(--lilac-deep); padding: 26px; display: flex; flex-direction: column; gap: 14px; }
+  .quote blockquote { font-size: 1rem; }
+  .quote cite { font-style: normal; font-size: .85rem; color: #5a4378; }
+  .quote cite strong { color: var(--plum); display: block; }
 
-  /* Contact */
-  .contact {
-    background: var(--lilac-deep); border: 3px solid var(--plum); box-shadow: var(--shadow);
-    padding: 60px 40px; text-align: center; color: var(--white);
-  }
-  .contact h2 { font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 800; margin-bottom: 12px; text-shadow: 3px 3px 0 var(--plum); }
-  .contact p { max-width: 560px; margin: 0 auto 28px; }
-  .contact .btn-ghost { background: var(--sun); }
+  .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 26px; }
+  .video { background: var(--white); border: 3px solid var(--plum); box-shadow: var(--shadow); padding: 14px; }
+  .video .frame { aspect-ratio: 16 / 9; background: var(--plum); display: flex; align-items: center; justify-content: center; }
+  .video iframe { width: 100%; height: 100%; border: 0; }
+  .video .frame a { color: var(--lilac); font-weight: 700; text-decoration: none; }
+  .video h4 { margin: 12px 0 2px; font-size: 1.05rem; }
+  .video small { color: #5a4378; }
 
-  /* Footer */
-  footer { background: var(--plum); color: var(--lilac-soft); padding: 50px 0 30px; margin-top: 40px; }
-  .foot-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; }
-  footer h5 { color: var(--sun); font-size: .95rem; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1px; }
-  footer ul { list-style: none; display: grid; gap: 8px; }
-  footer ul a { text-decoration: none; color: var(--lilac-soft); opacity: .85; }
-  footer ul a:hover { opacity: 1; color: var(--sun); }
-  .foot-bottom { margin-top: 36px; padding-top: 20px; border-top: 1px dashed var(--lilac-deep); font-size: .85rem; opacity: .8; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+  .custom { background: var(--lilac-deep); color: var(--white); border: 3px solid var(--plum); box-shadow: var(--shadow); padding: 56px 40px; text-align: center; }
+  .custom h2 { font-size: clamp(2rem, 4vw, 2.7rem); font-weight: 800; text-shadow: 3px 3px 0 var(--plum); margin-bottom: 12px; }
+  .custom p { max-width: 580px; margin: 0 auto 26px; }
 
-  /* Toast */
-  .toast {
-    position: fixed; bottom: 24px; left: 50%; transform: translate(-50%, 140%); z-index: 100;
-    background: var(--plum); color: var(--lilac); padding: 12px 22px; border-radius: var(--radius);
-    border: 2px solid var(--sun); font-weight: 600; transition: transform .35s;
-  }
-  .toast.show { transform: translate(-50%, 0); }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+  .contact-grid h3 { font-size: 1.2rem; margin-bottom: 10px; }
+  .contact-grid p + p { margin-top: 8px; }
+  .faq details { border-bottom: 2px dashed var(--lilac-deep); padding: 12px 0; }
+  .faq summary { cursor: pointer; font-weight: 600; }
+  .faq details p { margin-top: 8px; color: #5a4378; }
 
-  /* ---------- Responsive ---------- */
+  footer { background: var(--plum); color: var(--lilac-soft); padding: 40px 0 28px; }
+  .foot { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  footer a { color: var(--lilac-soft); text-decoration: none; margin-left: 18px; }
+  footer a:hover { color: var(--sun); }
+  .empty { text-align: center; opacity: .8; }
+
   @media (max-width: 900px) {
-    .hero-grid, .about-grid { grid-template-columns: 1fr; }
-    .collage { height: 440px; max-width: 520px; margin: 0 auto; width: 100%; }
-    .cats { grid-template-columns: 1fr; }
-    .foot-grid { grid-template-columns: 1fr 1fr; }
+    .hero-grid, .contact-grid, .cats { grid-template-columns: 1fr; }
+    .hero-visual { max-width: 520px; margin: 0 auto; width: 100%; }
   }
   @media (max-width: 720px) {
-    .nav ul {
-      position: absolute; top: 72px; left: 0; right: 0; background: var(--plum); flex-direction: column;
-      gap: 0; display: none; border-top: 1px solid var(--lilac-deep);
-    }
+    .nav ul { position: absolute; top: 72px; left: 0; right: 0; background: var(--plum); flex-direction: column; gap: 0; display: none; }
     .nav ul.open { display: flex; }
-    .nav ul li a { display: block; padding: 14px 4%; }
+    .nav ul a { display: block; padding: 14px 4%; }
     .menu-toggle { display: block; }
     .hero { padding: 40px 0 60px; }
-    .collage { height: 400px; }
-    .win-main { height: 260px; width: 92%; }
-    .win-daisy { height: 270px; width: 86%; }
-    .monogram { width: 160px; height: 160px; font-size: 4rem; }
-    .launch-tag { top: 10px; right: 0; font-size: .9rem; padding: 9px 14px; }
-    .about-card { padding: 28px; }
-    .contact { padding: 40px 22px; }
-    .foot-grid { grid-template-columns: 1fr; }
-    .foot-bottom { flex-direction: column; }
+    .custom { padding: 40px 22px; }
+    .checker, .monogram-box { height: 220px; }
+    .monogram { width: 130px; height: 130px; font-size: 3.4rem; }
   }
-  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
 </style>
 </head>
 <body>
 
 <header>
   <div class="wrap nav">
-    <a href="#top" class="logo" aria-label="CROCHOVIA home">
-      <svg class="flower" viewBox="0 0 40 40" aria-hidden="true">
-        <g fill="#f1e2fc">
-          <circle cx="20" cy="9" r="7"/><circle cx="31" cy="20" r="7"/>
-          <circle cx="20" cy="31" r="7"/><circle cx="9" cy="20" r="7"/>
-        </g>
-        <circle cx="20" cy="20" r="5" fill="#ffc83d"/>
-      </svg>
-      <span>CROCHOVIA</span>
-    </a>
+    <a href="#top" class="logo">CROCHOVIA</a>
     <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">&#9776;</button>
     <ul id="navMenu">
       <li><a href="#clay">Clay</a></li>
       <li><a href="#pipecleaner">Pipe Cleaners</a></li>
       <li><a href="#shop">Shop</a></li>
-      <li><a href="#about">About</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#videos">Videos</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <button class="cart-btn" id="cartBtn">Cart <b id="cartCount">0</b></button>
   </div>
 </header>
 
 <main id="top">
 
-  <!-- HERO -->
   <div class="hero">
     <div class="wrap hero-grid">
       <div>
-        <span class="eyebrow">New handmade drops every month</span>
-        <h1>Little things,<br /><em>made by hand.</em></h1>
-        <p class="lead">CROCHOVIA is a small studio shaping clay into keepsakes and bending pipe cleaners into charming little creatures. Every piece is handmade, one at a time.</p>
+        <h1 id="heroTitle"></h1>
+        <p class="lead" id="heroIntro"></p>
         <div class="btn-row">
           <a href="#shop" class="btn btn-primary">Shop the collection</a>
-          <a href="#about" class="btn btn-ghost">Our story</a>
+          <a id="heroIg" class="btn btn-light" target="_blank" rel="noopener">Order on Instagram</a>
         </div>
       </div>
-
-      <div class="collage" aria-hidden="true">
-        <div class="window win-main">
-          <div class="window-bar"><i></i><i></i><i></i></div>
-          <div class="win-check"></div>
-        </div>
-        <div class="window win-daisy">
-          <div class="window-bar"><i></i><i></i><i></i></div>
-          <div class="daisy-pattern">
-            <div class="monogram script">Cv</div>
-          </div>
-        </div>
-        <div class="launch-tag">NEW DROP!!!</div>
-        <div class="sparkle" style="top:-10px;left:6%;">&#10022;</div>
-        <div class="sparkle" style="bottom:20px;left:-4px;color:var(--lilac-soft);">&#10022;</div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="panel"><div class="panel-bar"><i></i><i></i><i></i></div><div class="checker"></div></div>
+        <div class="panel" style="margin-top:-90px;margin-left:60px;"><div class="panel-bar"><i></i><i></i><i></i></div><div class="monogram-box"><div class="monogram">Cv</div></div></div>
       </div>
     </div>
   </div>
 
-  <!-- CATEGORIES -->
   <section id="categories">
     <div class="wrap">
-      <div class="section-head">
-        <div class="tag">what we make</div>
-        <h2>Two crafts, one cozy shop</h2>
-      </div>
+      <div class="head"><div class="tag">what we make</div><h2>Two crafts, one cozy shop</h2></div>
       <div class="cats">
-        <a href="#clay" class="cat">
-          <div class="icon">&#127866;</div>
-          <h3>Clay Products</h3>
-          <p>Trinket dishes, mini planters, coasters and keepsakes, sculpted and finished by hand.</p>
-          <span class="arrow">&rarr;</span>
-        </a>
-        <a href="#pipecleaner" class="cat">
-          <div class="icon">&#128027;</div>
-          <h3>Pipe Cleaner Creations</h3>
-          <p>Bendable critters, flowers and tiny characters that stand, sit and wiggle.</p>
-          <span class="arrow">&rarr;</span>
-        </a>
+        <a href="#clay" class="cat"><h3>Clay Products</h3><p>Trinket dishes, planters and coasters, shaped and finished by hand.</p></a>
+        <a href="#pipecleaner" class="cat"><h3>Pipe Cleaner Creations</h3><p>Bendable critters and flowers that sit, stand and wiggle.</p></a>
       </div>
     </div>
   </section>
 
-  <!-- SHOP -->
   <section class="products" id="shop">
     <div class="wrap">
-      <div class="section-head">
-        <div class="tag">shop</div>
-        <h2>Fresh from the studio</h2>
-      </div>
-      <div class="grid">
-        <article class="card" id="clay">
-          <div class="thumb t1">&#127968;</div>
-          <div class="body">
-            <small>Clay</small>
-            <h4>Daisy Trinket Dish</h4>
-            <span class="price">&#8377;450</span>
-            <button class="add" data-name="Daisy Trinket Dish">Add to cart</button>
-          </div>
-        </article>
-        <article class="card">
-          <div class="thumb t2">&#127793;</div>
-          <div class="body">
-            <small>Clay</small>
-            <h4>Mini Succulent Planter</h4>
-            <span class="price">&#8377;620</span>
-            <button class="add" data-name="Mini Succulent Planter">Add to cart</button>
-          </div>
-        </article>
-        <article class="card">
-          <div class="thumb t3">&#9749;</div>
-          <div class="body">
-            <small>Clay</small>
-            <h4>Hand-Pressed Coaster Set</h4>
-            <span class="price">&#8377;890</span>
-            <button class="add" data-name="Hand-Pressed Coaster Set">Add to cart</button>
-          </div>
-        </article>
-        <article class="card" id="pipecleaner">
-          <div class="thumb t4">&#127800;</div>
-          <div class="body">
-            <small>Pipe Cleaners</small>
-            <h4>Bendy Flower Bouquet</h4>
-            <span class="price">&#8377;350</span>
-            <button class="add" data-name="Bendy Flower Bouquet">Add to cart</button>
-          </div>
-        </article>
-        <article class="card">
-          <div class="thumb t1">&#128038;</div>
-          <div class="body">
-            <small>Pipe Cleaners</small>
-            <h4>Pipe Cleaner Puppy</h4>
-            <span class="price">&#8377;280</span>
-            <button class="add" data-name="Pipe Cleaner Puppy">Add to cart</button>
-          </div>
-        </article>
-        <article class="card">
-          <div class="thumb t3">&#128032;</div>
-          <div class="body">
-            <small>Pipe Cleaners</small>
-            <h4>Wiggly Bug Friends</h4>
-            <span class="price">&#8377;240</span>
-            <button class="add" data-name="Wiggly Bug Friends">Add to cart</button>
-          </div>
-        </article>
-      </div>
+      <div class="head"><div class="tag">shop</div><h2>Fresh from the studio</h2><p>Every piece is made in small batches. Found something you love? Message us to reserve it.</p></div>
+      <div class="grid" id="productGrid"></div>
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="wrap about-grid">
-      <div class="about-card">
-        <h3>Hi, we're CROCHOVIA!</h3>
-        <p>We started with a lump of clay and a pack of pipe cleaners on a quiet afternoon. What began as a hobby turned into a small studio full of little things we love making.</p>
-        <p>Every piece is shaped, finished and checked by hand. No two are exactly alike, and that's the point.</p>
-      </div>
-      <div>
-        <div class="section-head" style="text-align:left;margin-bottom:10px;">
-          <div class="tag">why handmade</div>
-          <h2>Made slowly, with care</h2>
-        </div>
-        <div class="values">
-          <div class="value"><div class="dot">&#10047;</div><div><strong>Small batches</strong>Limited runs so every piece gets proper attention.</div></div>
-          <div class="value"><div class="dot">&#9825;</div><div><strong>Made to be kept</strong>Gifts and keepsakes meant to last.</div></div>
-          <div class="value"><div class="dot">&#9733;</div><div><strong>Custom orders welcome</strong>Tell us your colours and we'll make it with you.</div></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" style="padding-top:0;">
+  <section id="reviews">
     <div class="wrap">
-      <div class="contact">
+      <div class="head"><div class="tag">kind words</div><h2>From our customers</h2><p>Every piece is made for someone, and these are the people who received them.</p></div>
+      <div class="testi-grid" id="testimonialGrid"></div>
+    </div>
+  </section>
+
+  <section id="videos" class="hidden">
+    <div class="wrap">
+      <div class="head"><div class="tag">behind the making</div><h2>See how it's made</h2><p>Watch each piece come together, from first shape to final finish.</p></div>
+      <div class="video-grid" id="videoGrid"></div>
+    </div>
+  </section>
+
+  <section id="custom">
+    <div class="wrap">
+      <div class="custom">
         <h2 class="script" style="font-size:3rem;">Want something made just for you?</h2>
-        <p>Send us a message for custom orders, bulk gifting or collaborations. We reply within 24 hours.</p>
-        <a href="mailto:hello@crochovia.com" class="btn btn-ghost">Email us</a>
+        <p id="customText"></p>
+        <div class="btn-row" style="justify-content:center;">
+          <a id="customIg" class="btn btn-light" target="_blank" rel="noopener">Request on Instagram</a>
+          <a id="customMail" class="btn btn-light">Email us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" style="padding-top:0;">
+    <div class="wrap contact-grid">
+      <div>
+        <h3>Let's talk</h3>
+        <p>The fastest way to reach us is Instagram DM. For longer messages, collaborations or bulk gifting, email is best.</p>
+        <p><strong>Instagram:</strong> <span id="contactIg"></span></p>
+        <p><strong>Email:</strong> <span id="contactMail"></span></p>
+        <p id="replyTime"></p>
+      </div>
+      <div class="faq">
+        <h3>Questions</h3>
+        <details><summary>How do I order?</summary><p>Message us on Instagram or email with the piece and your details. We confirm availability and send payment details.</p></details>
+        <details><summary>Do you ship?</summary><p>Yes. Shipping costs and timing depend on your location. We'll confirm before you pay.</p></details>
+        <details><summary>How do I care for clay pieces?</summary><p>Dust with a dry cloth and avoid soaking them.</p></details>
       </div>
     </div>
   </section>
@@ -443,74 +230,113 @@
 </main>
 
 <footer>
-  <div class="wrap">
-    <div class="foot-grid">
-      <div>
-        <div class="logo" style="margin-bottom:12px;"><span>CROCHOVIA</span></div>
-        <p style="max-width:340px;opacity:.85;">Handmade clay products and pipe cleaner creations, crafted with love in small batches.</p>
-      </div>
-      <div>
-        <h5>Shop</h5>
-        <ul>
-          <li><a href="#clay">Clay Products</a></li>
-          <li><a href="#pipecleaner">Pipe Cleaners</a></li>
-          <li><a href="#shop">All Products</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5>Connect</h5>
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="https://instagram.com/crochovia" target="_blank" rel="noopener">Instagram</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="foot-bottom">
-      <span>&copy; <span id="year"></span> CROCHOVIA. All rights reserved.</span>
-      <span>Handmade with &#9825; in small batches</span>
+  <div class="wrap foot">
+    <span class="logo" style="font-size:1.6rem;">CROCHOVIA</span>
+    <div>
+      <a href="#shop">Shop</a><a href="#reviews">Reviews</a><a href="#contact">Contact</a><a id="footIg" target="_blank" rel="noopener">Instagram</a>
     </div>
   </div>
+  <div class="wrap" style="margin-top:20px;font-size:.85rem;opacity:.8;">&copy; <span id="year"></span> CROCHOVIA. Handmade with love in small batches.</div>
 </footer>
 
-<div class="toast" id="toast">Added to cart!</div>
-
 <script>
-  // Year
-  document.getElementById('year').textContent = new Date().getFullYear();
+  const $ = id => document.getElementById(id);
+  const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const show = (el, on) => el.classList.toggle('hidden', !on);
 
-  // Mobile menu
-  const toggle = document.getElementById('menuToggle');
-  const menu = document.getElementById('navMenu');
-  toggle.addEventListener('click', () => menu.classList.toggle('open'));
-  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
+  async function load(name) {
+    try {
+      const res = await fetch(`data/${name}.json`, { cache: 'no-cache' });
+      if (!res.ok) throw new Error(res.status);
+      return await res.json();
+    } catch (err) {
+      console.error(`Could not load data/${name}.json`, err);
+      return null;
+    }
+  }
 
-  // Cart (in-memory only)
-  let count = 0;
-  const countEl = document.getElementById('cartCount');
-  const toastEl = document.getElementById('toast');
-  let toastTimer;
+  function youtubeEmbed(link) {
+    const m = String(link).match(/(?:v=|youtu\.be\/)([\w-]{11})/);
+    return m ? `https://www.youtube-nocookie.com/embed/${m[1]}` : null;
+  }
 
-  document.querySelectorAll('.add').forEach(btn => {
-    btn.addEventListener('click', () => {
-      count++;
-      countEl.textContent = count;
-      btn.textContent = 'Added ✓';
-      btn.classList.add('done');
-      toastEl.textContent = `${btn.dataset.name} added to cart`;
-      toastEl.classList.add('show');
-      clearTimeout(toastTimer);
-      toastTimer = setTimeout(() => toastEl.classList.remove('show'), 1800);
-      setTimeout(() => { btn.textContent = 'Add to cart'; btn.classList.remove('done'); }, 1400);
-    });
-  });
+  function renderSite(s) {
+    $('heroTitle').innerHTML = `${esc(s.tagline).replace(' made by hand.', '')} <em>made by hand.</em>`;
+    $('heroIntro').textContent = s.intro;
+    $('heroIg').href = s.instagram_url;
+    $('customText').textContent = `Tell us your colours, the piece you have in mind and when you need it. We reply with a quote and timeline. ${s.custom_order_time}`;
+    $('customIg').href = s.instagram_url;
+    $('customMail').href = `mailto:${s.email}?subject=${encodeURIComponent('Custom order enquiry')}`;
+    $('contactIg').textContent = s.instagram_handle;
+    $('contactMail').textContent = s.email;
+    $('replyTime').textContent = s.reply_time;
+    $('footIg').href = s.instagram_url;
+    $('year').textContent = new Date().getFullYear();
+  }
 
-  document.getElementById('cartBtn').addEventListener('click', () => {
-    toastEl.textContent = count ? `You have ${count} item(s) in your cart` : 'Your cart is empty';
-    toastEl.classList.add('show');
-    clearTimeout(toastTimer);
-    toastTimer = setTimeout(() => toastEl.classList.remove('show'), 1800);
-  });
+  function renderProducts(list, s) {
+    const items = (list?.products || []).filter(p => p.visible);
+    $('productGrid').innerHTML = items.map(p => {
+      const photo = p.photo
+        ? `<img src="${esc(p.photo)}" alt="${esc(p.name)}" loading="lazy" />`
+        : `<span aria-hidden="true">&#10047;</span>`;
+      return `
+        <article class="card">
+          <div class="thumb">${photo}</div>
+          <div class="body">
+            <small>${esc(p.category)}</small>
+            <h4>${esc(p.name)}</h4>
+            <p>${esc(p.description)}</p>
+            <span class="price">&#8377;${esc(p.price)}</span>
+            <div class="actions">
+              <a class="btn btn-primary btn-small" href="${esc(s.instagram_url)}" target="_blank" rel="noopener">Order on Instagram</a>
+              <a class="btn btn-light btn-small" href="mailto:${esc(s.email)}?subject=${encodeURIComponent('Order: ' + p.name)}">Email to order</a>
+            </div>
+          </div>
+        </article>`;
+    }).join('');
+    if (!items.length) $('productGrid').innerHTML = `<p class="empty" style="grid-column:1/-1;">New pieces coming soon. Follow us on Instagram for drops.</p>`;
+  }
+
+  function renderTestimonials(list) {
+    const items = (list?.testimonials || []).filter(t => t.visible);
+    show($('reviews'), items.length > 0);
+    $('testimonialGrid').innerHTML = items.map(t => `
+      <figure class="quote">
+        <blockquote>&ldquo;${esc(t.quote)}&rdquo;</blockquote>
+        <cite><strong>${esc(t.name)}</strong>${t.product ? 'Bought: ' + esc(t.product) : ''}</cite>
+      </figure>`).join('');
+  }
+
+  function renderVideos(list) {
+    const items = (list?.videos || []).filter(v => v.visible);
+    show($('videos'), items.length > 0);
+    $('videoGrid').innerHTML = items.map(v => {
+      const embed = youtubeEmbed(v.link);
+      const frame = embed
+        ? `<iframe src="${esc(embed)}" title="${esc(v.title)}" loading="lazy" allowfullscreen></iframe>`
+        : `<a href="${esc(v.link)}" target="_blank" rel="noopener">Watch on Instagram / link &rarr;</a>`;
+      return `
+        <div class="video">
+          <div class="frame">${frame}</div>
+          <h4>${esc(v.title)}</h4>
+          <small>${esc(v.type)}</small>
+        </div>`;
+    }).join('');
+  }
+
+  $('menuToggle').addEventListener('click', () => $('navMenu').classList.toggle('open'));
+  document.querySelectorAll('#navMenu a').forEach(a => a.addEventListener('click', () => $('navMenu').classList.remove('open')));
+
+  (async () => {
+    const [site, products, testimonials, videos] = await Promise.all(
+      ['site', 'products', 'testimonials', 'videos'].map(load)
+    );
+    if (site) renderSite(site);
+    if (site) renderProducts(products, site);
+    renderTestimonials(testimonials);
+    renderVideos(videos);
+  })();
 </script>
 </body>
 </html>
